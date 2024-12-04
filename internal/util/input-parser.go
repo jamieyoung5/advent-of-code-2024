@@ -67,3 +67,25 @@ func ReadRowsFromFileAsInteger(filename string) ([][]int, error) {
 
 	return result, nil
 }
+
+func ReadCharsFromFile(filename string) ([][]rune, error) {
+	file, err := os.Open(filename)
+	if err != nil {
+		return nil, err
+	}
+	defer file.Close()
+
+	var runeMatrix [][]rune
+	scanner := bufio.NewScanner(file)
+
+	for scanner.Scan() {
+		line := scanner.Text()
+		runeMatrix = append(runeMatrix, []rune(line))
+	}
+
+	if err = scanner.Err(); err != nil {
+		return nil, err
+	}
+
+	return runeMatrix, nil
+}

@@ -1,7 +1,8 @@
 package solutions
 
 import (
-	"advent-of-code-2024/internal/util"
+	"github.com/jamieyoung5/advent-of-code-2024/internal/util"
+	"github.com/jamieyoung5/go-strc-yourself/pkg/sliceutil"
 	"math"
 	"path/filepath"
 	"slices"
@@ -14,7 +15,7 @@ func Day1Part2(inputsPath string) (int, error) {
 		return -1, err
 	}
 
-	occurences := util.Counts(input[1])
+	occurences := sliceutil.Counts(input[1])
 
 	var similarityScore int
 	for _, val := range input[0] {

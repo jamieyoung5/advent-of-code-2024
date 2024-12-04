@@ -1,7 +1,7 @@
 package solutions
 
 import (
-	"advent-of-code-2024/internal/util"
+	"github.com/jamieyoung5/advent-of-code-2024/internal/util"
 	"math"
 	"path/filepath"
 )
